@@ -10,13 +10,15 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	</http:listener-config>
 	<flow name="jenkins-cicd-project-newFlow" doc:id="06b3d77b-ebb6-43c2-a14a-d4084e02c45c" >
 		<http:listener doc:name="Listener" doc:id="543ff400-b29c-4860-af17-c41711c2bc15" config-ref="HTTP_Listener_config" path="/cicdtest"/>
+		<logger level="INFO" doc:name="Logger" doc:id="5d11fb19-3d84-4539-90f9-41e0d46cbc2e" message="### starting logger"/>
 		<ee:transform doc:name="Transform Message" doc:id="077590f7-3699-445c-8002-e7137f702627" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
 {
-	"Result" : "Pipeline creatued Successfuly"
+	"Result" : "Pipeline creatued Successfuly",
+	"Code"  : "Code is commited susscfully the the git hub"
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
