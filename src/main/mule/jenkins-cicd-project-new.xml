@@ -10,16 +10,16 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 	</http:listener-config>
 	<flow name="jenkins-cicd-project-newFlow" doc:id="06b3d77b-ebb6-43c2-a14a-d4084e02c45c" >
 		<http:listener doc:name="Listener" doc:id="543ff400-b29c-4860-af17-c41711c2bc15" config-ref="HTTP_Listener_config" path="/cicdtest"/>
-		<ee:transform doc:name="Transform Message" doc:id="3bd09536-bece-4ef5-9a7f-07332a4264df" >
+		<ee:transform doc:name="Transform Message" doc:id="077590f7-3699-445c-8002-e7137f702627" >
 			<ee:message >
 				<ee:set-payload ><![CDATA[%dw 2.0
 output application/json
 ---
 {
-	"Result" : "CI/CD Pipeline Created Successfully"
+	"Result" : "Pipeline creatued Successfuly"
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="Logger" doc:id="6ae13493-6b01-430c-bc0d-8ae3a14a7c4e" message='#["End Logger of cicd jenkins pipeline"]'/>
+		<logger level="INFO" doc:name="Logger" doc:id="18c55358-5528-409f-a3db-6189aa9a4c03" message='#["End logger of CI/CD pepeline"]'/>
 	</flow>
 </mule>
