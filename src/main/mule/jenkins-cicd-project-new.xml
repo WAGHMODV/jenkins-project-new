@@ -16,10 +16,10 @@ http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/
 output application/json
 ---
 {
-	"Result" : "Pepeline Created Successfully"
+	"Result" : "CI/CD Pipeline Created Successfully"
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
-		<logger level="INFO" doc:name="Logger" doc:id="6ae13493-6b01-430c-bc0d-8ae3a14a7c4e" message='#["End Logger of cicd pipeline"]'/>
+		<logger level="INFO" doc:name="Logger" doc:id="6ae13493-6b01-430c-bc0d-8ae3a14a7c4e" message='#["End Logger of cicd jenkins pipeline"]'/>
 	</flow>
 </mule>
